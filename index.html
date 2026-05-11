@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivam Sharma — Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <!-- Boxicons for clean icons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       CUSTOM CURSOR
+  ═══════════════════════════════════════════ -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ═══════════════════════════════════════════
+       SCROLL PROGRESS BAR
+  ═══════════════════════════════════════════ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ═══════════════════════════════════════════
+       PRELOADER
+  ═══════════════════════════════════════════ -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">
+        <span class="logo-letter">S</span><span class="logo-letter accent">S</span>
+      </div>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar" id="preloaderBar"></div>
+      </div>
+      <div class="preloader-percent" id="preloaderPercent">0%</div>
+      <div class="preloader-label">Initializing System</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-text">S<span class="accent">S</span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class='bx bx-moon'></i>
+      </button>
+      <a href="#contact" class="btn-hire">Contact</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <!-- Particle canvas -->
+    <canvas class="particles-canvas" id="particlesCanvas"></canvas>
+
+    <!-- Grid overlay -->
+    <div class="hero-grid"></div>
+
+    <!-- Mouse glow -->
+    <div class="mouse-glow" id="mouseGlow"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="badge-dot"></span>
+        First Year B.Tech CSE (AI/ML)
+      </div>
+
+      <h1 class="hero-name reveal-up">
+        <span class="name-line">Shivam</span>
+        <span class="name-line accent-line">Sharma</span>
+      </h1>
+
+      <div class="hero-role reveal-up">
+        <span class="role-prefix">I am a </span>
+        <span class="typed-text" id="typedText"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+
+      <p class="hero-intro reveal-up">
+        B.Tech CSE (AI/ML) student with a strong interest in IoT, embedded systems, and AI-based technologies.<br/>
+        Interested in building practical hardware-integrated software projects and continuously improving technical skills.
+      </p>
+
+      <div class="hero-buttons reveal-up">
+        <a href="#contact" class="btn-primary">
+          <i class='bx bx-send'></i>
+          Contact Me
+        </a>
+        <a href="https://github.com/ShivamS0704" target="_blank" class="btn-outline">
+          <i class='bx bxl-github'></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/shivam-sharma-65261b409" target="_blank" class="btn-outline">
+          <i class='bx bxl-linkedin'></i> LinkedIn
+        </a>
+        <a href="#contact" class="btn-outline">
+          <i class='bx bx-send'></i> Contact
+        </a>
+      </div>
+
+      <!-- Floating tech icons -->
+      <div class="floating-icons">
+        <div class="float-icon fi1"><i class='bx bxl-c-plus-plus'></i></div>
+        <div class="float-icon fi2"><i class='bx bxl-github'></i></div>
+        <div class="float-icon fi3"><i class='bx bxl-html5'></i></div>
+        <div class="float-icon fi4"><i class='bx bx-chip'></i></div>
+        <div class="float-icon fi6"><i class='bx bxl-javascript'></i></div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ABOUT SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// about_me</span>
+        <h2 class="section-title">Who Am I?</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-visual reveal-left">
+          <div class="about-avatar-wrap">
+            <div class="avatar-ring"></div>
+            <div class="avatar-box">
+              <div class="avatar-initials">SS</div>
+              <div class="avatar-status">
+                <span class="status-dot"></span> Student
+              </div>
+            </div>
+            <div class="avatar-orbit orbit1">
+              <div class="orbit-dot"></div>
+            </div>
+            <div class="avatar-orbit orbit2">
+              <div class="orbit-dot"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content reveal-right">
+          <h3 class="about-subtitle">AI/ML student. IoT builder. Embedded systems learner.</h3>
+          <p class="about-text">
+            Hey — I'm <strong>Shivam Sharma</strong>, a first-year B.Tech CSE (AI/ML) student from Gurugram, Haryana. I am deeply interested in Artificial Intelligence, Machine Learning, IoT, and embedded systems. I enjoy working with C programming, Arduino, Raspberry Pi Pico, and hardware-integrated software projects.
+          </p>
+          <p class="about-text">
+            I have worked on projects such as Smart Energy Theft Detection, Li‑Fi Based Audio Transfer, Scientific Calculator in C, Library Management System, and a 4-Bit Binary Adder Circuit. I enjoy learning through practical implementation and experimentation.
+          </p>
+
+          <div class="about-tags">
+            <span class="tag"><i class='bx bx-code-alt'></i> C Programming</span>
+            <span class="tag"><i class='bx bx-math'></i> MATLAB</span>
+            <span class="tag"><i class='bx bx-chip'></i> IoT</span>
+            <span class="tag"><i class='bx bx-cog'></i> Embedded Systems</span>
+            <span class="tag"><i class='bx bx-git-branch'></i> Git</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SKILLS SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// tech_stack</span>
+        <h2 class="section-title">Skills & Tools</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card reveal-up" data-delay="0">
+          <div class="skill-icon-wrap">
+            <i class='bx bxl-c-plus-plus'></i>
+          </div>
+          <h4>C Programming</h4>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="88"></div>
+          </div>
+          <span class="skill-pct">Intermediate</span>
+        </div>
+
+
+
+        <div class="skill-card reveal-up" data-delay="150">
+          <div class="skill-icon-wrap">
+            <i class='bx bxl-javascript'></i>
+          </div>
+          <h4>MATLAB</h4>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="45"></div>
+          </div>
+          <span class="skill-pct">Beginner</span>
+        </div>
+
+        <div class="skill-card reveal-up" data-delay="200">
+          <div class="skill-icon-wrap">
+            <i class='bx bxl-github'></i>
+          </div>
+          <h4>Git & GitHub</h4>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="70"></div>
+          </div>
+          <span class="skill-pct">Intermediate</span>
+        </div>
+
+        <div class="skill-card reveal-up" data-delay="250">
+          <div class="skill-icon-wrap">
+            <i class='bx bx-brain'></i>
+          </div>
+          <h4>Problem Solving</h4>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="80"></div>
+          </div>
+          <span class="skill-pct">Intermediate</span>
+        </div>
+
+        <div class="skill-card reveal-up" data-delay="300">
+          <div class="skill-icon-wrap">
+            <i class='bx bx-file'></i>
+          </div>
+          <h4>File Handling (C)</h4>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="85"></div>
+          </div>
+          <span class="skill-pct">Intermediate</span>
+        </div>
+
+
+        <div class="skill-card reveal-up" data-delay="400">
+          <div class="skill-icon-wrap">
+            <i class='bx bx-shield'></i>
+          </div>
+          <h4>Digital Electronics</h4>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="65"></div>
+          </div>
+          <span class="skill-pct">Learning</span>
+        </div>
+
+        <div class="skill-card reveal-up" data-delay="450">
+          <div class="skill-icon-wrap">
+            <i class='bx bx-chip'></i>
+          </div>
+          <h4>IoT Fundamentals</h4>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="45"></div>
+          </div>
+          <span class="skill-pct">Beginner</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PROJECTS SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// projects</span>
+        <h2 class="section-title">What I've Built</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card tilt-card reveal-up" data-delay="0">
+          <div class="project-img">
+            <div class="project-img-placeholder">
+              <i class='bx bx-calculator'></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Scientific Calculator in C</h3>
+            <p class="project-desc">A menu-driven scientific calculator developed in C with support for arithmetic, trigonometric, and matrix operations.</p>
+            <div class="project-tech">
+              <span>C</span><span>Math Library</span><span>Functions</span>
+            </div>
+            <div class="project-features">
+              <span><i class='bx bx-check'></i> Trigonometric Functions</span>
+              <span><i class='bx bx-check'></i> Matrix Operations</span>
+              <span><i class='bx bx-check'></i> Menu-driven Interface</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <a href="calculator.c" target="_blank" rel="noopener noreferrer" class="proj-btn"><i class='bx bx-code-alt'></i> Code</a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card tilt-card reveal-up" data-delay="100">
+          <div class="project-img">
+            <div class="project-img-placeholder">
+              <i class='bx bx-book'></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Library Management System</h3>
+            <p class="project-desc">A C-based console system for adding, issuing, returning, and managing books with student records, automatic late fine calculation, and inventory tracking.</p>
+            <div class="project-tech">
+              <span>C</span><span>Arrays</span><span>File Handling</span>
+            </div>
+            <div class="project-features">
+              <span><i class='bx bx-check'></i> Issue/Return Books</span>
+              <span><i class='bx bx-check'></i> Fine Calculation</span>
+              <span><i class='bx bx-check'></i> Inventory Tracking</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <a href="library.c" target="_blank" rel="noopener noreferrer" class="proj-btn"><i class='bx bx-code-alt'></i> Code</a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card tilt-card reveal-up" data-delay="200">
+          <div class="project-img">
+            <div class="project-img-placeholder encrypt">
+              <i class='bx bx-chip'></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">4-Bit Binary Adder Circuit</h3>
+            <p class="project-desc">A digital electronics project designed using logic gates to implement a 4-bit binary adder, reinforcing Boolean algebra and combinational circuit concepts.</p>
+            <div class="project-tech">
+              <span>Logic Gates</span><span>Boolean Algebra</span><span>Digital Electronics</span>
+            </div>
+            <div class="project-features">
+              <span><i class='bx bx-check'></i> 4-bit Addition</span>
+              <span><i class='bx bx-check'></i> Gate-level Logic</span>
+              <span><i class='bx bx-check'></i> Circuit Design</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 — Featured -->
+        <div class="project-card tilt-card featured-proj reveal-up" data-delay="300">
+          <div class="project-img">
+            <div class="project-img-placeholder energy">
+              <i class='bx bx-bolt-circle'></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Smart Energy Theft Detection</h3>
+            <p class="project-desc">A MicroPython and IoT-based real-time monitoring system that detects power consumption anomalies using current sensors, LEDs, and buzzer alerts.</p>
+            <div class="project-tech">
+              <span>MicroPython</span><span>IoT</span><span>Current Sensor</span><span>Raspberry Pi Pico</span>
+            </div>
+            <div class="project-features">
+              <span><i class='bx bx-check'></i> Current Monitoring</span>
+              <span><i class='bx bx-check'></i> Sensor-based Detection</span>
+              <span><i class='bx bx-check'></i> LED & Buzzer Alerts</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <a href="#" class="proj-btn proj-demo"><i class='bx bxl-github'></i> Code</a>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card tilt-card reveal-up" data-delay="400">
+          <div class="project-img">
+            <div class="project-img-placeholder">
+              <i class='bx bx-user-circle'></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Li‑Fi Based Audio Transfer</h3>
+            <p class="project-desc">A wireless communication prototype that transmits audio signals using LED light and a photodiode receiver, demonstrating Visible Light Communication as an alternative to RF-based transmission.</p>
+            <div class="project-tech">
+              <span>Li‑Fi</span><span>LED</span><span>Photodiode</span>
+            </div>
+            <div class="project-features">
+              <span><i class='bx bx-check'></i> Light-based Transfer</span>
+              <span><i class='bx bx-check'></i> Audio Signal Output</span>
+              <span><i class='bx bx-check'></i> VLC Prototype</span>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       EDUCATION TIMELINE
+  ═══════════════════════════════════════════ -->
+  <section class="education section" id="education">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// education</span>
+        <h2 class="section-title">My Journey</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="edu-timeline">
+
+        <div class="edu-item reveal-left">
+          <div class="edu-dot current"></div>
+          <div class="edu-card">
+            <div class="edu-year">Present</div>
+            <h3>B.Tech — Computer Science & Engineering (AI/ML)</h3>
+            <div class="edu-sub">Gurugram, Haryana, India</div>
+            <p>Pursuing B.Tech CSE with specialization in Artificial Intelligence and Machine Learning. Actively learning programming fundamentals, IoT systems, embedded platforms, digital electronics, and software development tools.</p>
+            <div class="edu-tags">
+              <span>Semester 1 ✓</span>
+              <span>Semester 2 ✓</span>
+              <span>Current: Sem 2</span>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CERTIFICATIONS
+  ═══════════════════════════════════════════ -->
+  <section class="certs section" id="certs">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// certifications</span>
+        <h2 class="section-title">Certification</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="certs-grid">
+
+        <div class="cert-card reveal-up" data-delay="0">
+          <div class="cert-platform">
+            <i class='bx bx-globe' style="color:#0db7ed"></i>
+            <span>Certification</span>
+          </div>
+          <h4>Six Sigma White Belt</h4>
+          <div class="cert-date">2025</div>
+          <div class="cert-score">Process Improvement Fundamentals</div>
+          <a href="./six sigma.pdf" target="_blank" rel="noopener noreferrer" class="cert-btn">View Certificate <i class='bx bx-link-external'></i></a>
+        </div>
+
+        <div class="cert-card reveal-up" data-delay="100">
+          <div class="cert-platform">
+            <i class='bx bx-chip' style="color:#38bdf8"></i>
+            <span>Certification</span>
+          </div>
+          <h4>Arduino Certification</h4>
+          <div class="cert-date">2025</div>
+          <div class="cert-score">Arduino Programming & Embedded Systems Fundamentals</div>
+          <a href="arduino%20course%20certificate.pdf" target="_blank" class="cert-btn">View Certificate <i class='bx bx-link-external'></i></a>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       CONTACT SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// get_in_touch</span>
+        <h2 class="section-title">Contact</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-info reveal-left">
+          <h3>Contact Details</h3>
+          <p>Feel free to connect for academic, project, or technical discussions.</p>
+
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class='bx bx-envelope'></i></div>
+              <div>
+                <div class="ci-label">Email</div>
+                <div class="ci-val">shivam.work0704@gmail.com</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class='bx bx-phone'></i></div>
+              <div>
+                <div class="ci-label">Phone</div>
+                <div class="ci-val">7048962424</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class='bx bxl-github'></i></div>
+              <div>
+                <div class="ci-label">GitHub</div>
+                <div class="ci-val">github.com/ShivamS0704</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class='bx bxl-linkedin'></i></div>
+              <div>
+                <div class="ci-label">LinkedIn</div>
+                <div class="ci-val">linkedin.com/in/shivam-sharma-65261b409</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class='bx bx-map-pin'></i></div>
+              <div>
+                <div class="ci-label">Location</div>
+                <div class="ci-val">Gurugram, Haryana, India 🇮🇳</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <a href="https://github.com/ShivamS0704" target="_blank" class="social-icon"><i class='bx bxl-github'></i></a>
+            <a href="https://www.linkedin.com/in/shivam-sharma-65261b409" target="_blank" class="social-icon"><i class='bx bxl-linkedin'></i></a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal-right">
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/xeenvdvo" method="POST">
+            <input type="hidden" name="_subject" value="New message from Shivam Sharma Portfolio" />
+            <div class="form-group">
+              <input type="text" id="fname" name="name" required autocomplete="off" />
+              <label for="fname">Your Name</label>
+              <div class="form-line"></div>
+            </div>
+            <div class="form-group">
+              <input type="email" id="femail" name="email" required autocomplete="off" />
+              <label for="femail">Email Address</label>
+              <div class="form-line"></div>
+            </div>
+            <div class="form-group">
+              <input type="text" id="fsubject" name="subject" required autocomplete="off" />
+              <label for="fsubject">Subject</label>
+              <div class="form-line"></div>
+            </div>
+            <div class="form-group">
+              <textarea id="fmessage" name="message" rows="5" required></textarea>
+              <label for="fmessage">Your Message</label>
+              <div class="form-line"></div>
+            </div>
+            <button type="submit" class="btn-primary btn-full">
+              <i class='bx bx-send'></i>
+              Send Message
+              <span class="btn-glow"></span>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <i class='bx bx-check-circle'></i> Message sent! I'll reply within 24 hours.
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-logo">
+        S<span class="accent">S</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-socials">
+        <a href="https://github.com/ShivamS0704" target="_blank"><i class='bx bxl-github'></i></a>
+        <a href="https://www.linkedin.com/in/shivam-sharma-65261b409" target="_blank"><i class='bx bxl-linkedin'></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><span class="accent">Shivam Sharma</span> · 2025</p>
+      <p>B.Tech CSE (AI/ML) Student Portfolio</p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-top" id="backTop" aria-label="Back to top">
+    <i class='bx bx-chevron-up'></i>
+  </button>
+
+  <script src="script.js"></script>
+  <script>
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        const preloader = document.getElementById("preloader");
+        if (preloader) {
+          preloader.style.display = "none";
+          preloader.style.opacity = "0";
+          preloader.style.visibility = "hidden";
+        }
+
+        document.querySelectorAll(".reveal, .reveal-up, .reveal-left, .reveal-right, .section, .skill-card, .project-card, .cert-card, .edu-item").forEach(function (item) {
+          item.classList.add("show");
+          item.style.opacity = "1";
+          item.style.visibility = "visible";
+          item.style.transform = "none";
+        });
+      }, 1200);
+    });
+
+    const themeToggle = document.getElementById("themeToggle");
+
+    if (localStorage.getItem("theme") === "light") {
+      document.body.classList.add("light-mode");
+      if (themeToggle) {
+        themeToggle.innerHTML = "<i class='bx bx-sun'></i>";
+      }
+    }
+
+    if (themeToggle) {
+      themeToggle.addEventListener("click", function () {
+        document.body.classList.toggle("light-mode");
+
+        if (document.body.classList.contains("light-mode")) {
+          localStorage.setItem("theme", "light");
+          themeToggle.innerHTML = "<i class='bx bx-sun'></i>";
+        } else {
+          localStorage.setItem("theme", "dark");
+          themeToggle.innerHTML = "<i class='bx bx-moon'></i>";
+        }
+      });
+    }
+
+    const cursorDot = document.getElementById("cursorDot");
+    const cursorRing = document.getElementById("cursorRing");
+    const mouseGlow = document.getElementById("mouseGlow");
+
+    document.addEventListener("mousemove", function (e) {
+      if (cursorDot) {
+        cursorDot.style.left = e.clientX + "px";
+        cursorDot.style.top = e.clientY + "px";
+        cursorDot.style.opacity = "1";
+      }
+
+      if (cursorRing) {
+        cursorRing.style.left = e.clientX + "px";
+        cursorRing.style.top = e.clientY + "px";
+        cursorRing.style.opacity = "1";
+      }
+
+      if (mouseGlow) {
+        mouseGlow.style.left = e.clientX + "px";
+        mouseGlow.style.top = e.clientY + "px";
+      }
+    });
+  </script>
+</body>
+</html>
